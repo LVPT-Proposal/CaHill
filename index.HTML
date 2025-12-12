@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Casino Workshop Proposal | Cahill Gordon & Reindel LLP</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --navy-light: #14284E;
+            --navy-dark: #0A1633;
+            --cream: #F1E7D0;
+            --white: #FFFFFF;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--navy-dark);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center { text-align: center; }
+        .text-white { color: var(--white); }
+        .text-navy { color: var(--navy-light); }
+        .bg-cream { background-color: var(--cream); }
+        .bg-navy { background-color: var(--navy-dark); color: var(--white); }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--navy-light);
+            border: 2px solid var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--cream);
+            border-color: var(--cream);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--navy-light);
+            color: var(--navy-light);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--navy-light);
+            color: var(--white);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* --- FIXED CORNER LOGO --- */
+        .fixed-logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            height: auto;
+            z-index: 999;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            transition: width 0.3s ease;
+        }
+
+        /* --- SECTION 1: HERO --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/6932852ce0f0925408b3e83c.png');
+            background-color: var(--navy-dark); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-family: var(--font-body);
+            font-weight: 700;
+            color: var(--cream);
+            font-size: 2.2rem;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        /* --- SECTION 2: EXECUTIVE SUMMARY --- */
+        #exec-summary h2 {
+             font-size: 2.2rem;
+        }
+        
+        .exec-summary-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #050c1d;
+            line-height: 1.8;
+        }
+
+        .icon-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .icon-box {
+            text-align: center;
+            width: 200px;
+        }
+
+        .icon-box i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--navy-dark);
+        }
+
+        .icon-box h4 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .why-poker-block {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255,255,255,0.5);
+            border-left: 5px solid var(--navy-light);
+            text-align: left;
+        }
+
+        /* --- NEW: IMAGE GALLERY SECTION --- */
+        .image-gallery-section {
+            padding: 0 0 80px 0;
+        }
+        
+        .gallery-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* --- SECTION 3: EXPERIENCE OPTIONS --- */
+        .card-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            padding: 50px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 350px;
+        }
+
+        .card-light {
+            background: var(--white);
+            border: 2px solid var(--navy-light);
+        }
+
+        .card-dark {
+            background: var(--navy-light);
+            color: var(--white);
+        }
+        
+        .card h3 { font-size: 2rem; margin-bottom: 20px; }
+        
+        .card-dark h3, .card-dark p { color: var(--white); }
+        
+        .card-dark .subhead {
+            color: var(--cream);
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            font-size: 1.25rem;
+            line-height: 1.7;
+        }
+
+        .hand-analysis-box {
+            margin-top: 50px;
+            background: #eef1f5;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* --- SECTION 4: INSTRUCTOR RATIO --- */
+        .ratio-graphic {
+            font-size: 3rem;
+            margin: 30px 0;
+            color: var(--navy-light);
+        }
+        
+        .ratio-graphic .fa-chalkboard-user {
+            color: var(--navy-light);
+            margin-right: 20px;
+        }
+        
+        .ratio-graphic .fa-user {
+            color: #ccc;
+            font-size: 2.2rem;
+            margin: 0 4px;
+        }
+        
+        .ratio-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* --- SECTION 5: ENHANCEMENTS --- */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .enhancement-col {
+            text-align: center;
+        }
+
+        .enhancement-col i {
+            font-size: 3rem;
+            color: var(--navy-light);
+            margin-bottom: 20px;
+        }
+        
+        .enhancement-col h4 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .enhancement-col ul li {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        
+        .enhancement-col ul li.cocktail-name {
+            font-weight: 500;
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        /* --- SECTION 6: VENUES --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .venue-card {
+            position: relative;
+            height: 300px;
+            background-color: #ddd;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .venue-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .venue-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- SECTION 7: INSTRUCTORS --- */
+        .instructor-card {
+            background: var(--white);
+            padding: 20px;
+            border-top: 5px solid var(--navy-light);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            text-align: center;
+        }
+        
+        .instructor-img {
+            width: 120px;
+            height: 120px;
+            background: #eee;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .instructor-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .instructor-card h4 { margin-bottom: 5px; font-size: 1.2rem;}
+        .instructor-card .stats { font-size: 1rem; color: #333; line-height: 1.6;}
+        .instructor-card .years-teaching { font-weight: 700; color: var(--navy-light); margin-bottom: 10px; display: block; }
+
+        .instructor-footer-text {
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: var(--font-head);
+            font-style: italic;
+            margin-top: 40px;
+            color: var(--navy-dark);
+        }
+
+        /* --- SECTION 8: PRICING --- */
+        .pricing-panel {
+            border: 2px solid var(--cream);
+            padding: 50px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            color: var(--cream);
+            font-family: var(--font-head);
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* --- SECTION 9 & 10: NEXT STEPS & CTA --- */
+        .steps-list {
+            counter-reset: step;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .steps-list li {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .steps-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: -2px;
+            width: 40px;
+            height: 40px;
+            background: var(--navy-light);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-buttons .btn {
+            font-size: 1.1rem;
+            padding: 20px 40px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--navy-light);
+            color: var(--white);
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        footer a { color: var(--cream); font-weight: bold; }
+
+        /* --- MOBILE TWEAKS --- */
+        @media (max-width: 768px) {
+            .hero {
+                /* FIX FOR MOBILE HERO IMAGE */
+                height: auto; /* Allow height to adapt */
+                min-height: 60vh; /* Ensure it's reasonably tall */
+                padding: 100px 0; /* Add padding to center text */
+                background-attachment: scroll; 
+                background-position: center;
+            }
+            .hero h1 { font-size: 2.2rem; }
+            .hero h2 { font-size: 1.5rem; }
+            .section-padding { padding: 50px 0; }
+            .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+            .instructor-footer-text { font-size: 1.2rem; }
+            .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); }
+            
+            /* Shrink fixed logo slightly on mobile */
+            .fixed-logo {
+                width: 90px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/688b94d7fc4ae33b5ab65b48.png" alt="LV Poker Training Logo" class="fixed-logo">
+
+    <header class="hero">
+        <div class="container">
+            <h1>Private Casino Workshop Proposal</h1>
+            <h2>Designed Exclusively for<br>Cahill Gordon & Reindel LLP — February 2026</h2>
+        </div>
+    </header>
+
+    <section id="exec-summary" class="section-padding bg-cream">
+        <div class="container">
+            <div class="text-center" style="max-width: 900px; margin: 0 auto;">
+                <h2>A Customized Poker Training & Entertainment Experience</h2>
+                <div class="exec-summary-text">
+                    <p>Las Vegas Poker Training is pleased to present a curated private casino workshop for Cahill Gordon & Reindel LLP.</p>
+                    <p>This experience blends strategic instruction, psychology, high-end entertainment, and world-class hospitality — tailored for 10–15 distinguished guests.</p>
+                </div>
+            </div>
+
+            <div class="icon-row">
+                <div class="icon-box">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h4>Tailored Experience</h4>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-brain"></i>
+                    <h4>Strategy & Psychology</h4>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h4>Corporate Relationship</h4>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-champagne-glasses"></i>
+                    <h4>Memorable & Premium</h4>
+                </div>
+            </div>
+
+            <div class="why-poker-block">
+                <h3>Why Poker?</h3>
+                <p>While we can facilitate other casino gaming options (like Blackjack or Craps), <strong>Poker is the definitive choice for this group</strong>. Other games are passive matches of chance against the house. Poker is a game of skill, psychology, and risk management played against peers.</p>
+                <p style="margin-bottom: 0;">It mirrors the high-stakes negotiation, reading of people, and strategic decision-making inherent in corporate law, making it the ultimate team-building arena.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-gallery-section bg-cream">
+        <div class="gallery-strip">
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/679d3db2aedcfa2008ed45ef.jpeg" alt="Event Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/69329adbe0f092644fb65b71.jpg" alt="Event Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/69329429e0f0927468b5af13.jpg" alt="Event Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/69329adb1d466e5f44c4fd90.jpg" alt="Event Image 4">
+            </div>
+        </div>
+    </section>
+
+    <section id="options" class="section-padding">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 50px;">Experience Options</h2>
+            <div class="card-grid-2">
+                <div class="card card-light">
+                    <h3>Happy Hour Poker Experience</h3>
+                    <p>Networking-centered environment where guests rotate freely in and out. Features engaging and entertaining hand analysis. Structured, but looser.</p>
+                </div>
+                <div class="card card-dark">
+                    <h3>Classroom-Style Poker Training</h3>
+                    <div class="subhead">Reading Opponents • Psychology • Body Tells</div>
+                    <p>Structured, professional, and engaging. Provides strategic insights and highly memorable takeaways in regards to decoding your opponents conscious and un-concious tells. Perfect for a corporate audience.</p>
+                </div>
+            </div>
+
+            <div class="hand-analysis-box">
+                <h3 style="color: var(--navy-light);">What is Hand Analysis?</h3>
+                <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                    Imagine Tiger Woods watching your back-swing in real time and adjusting exactly what you are doing right and wrong. Our pros will confidently break down what all players are doing & if it is the most optimal play or if there was a better option.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="border-top: 1px solid var(--cream); border-bottom: 1px solid var(--cream);">
+        <div class="container-wide text-center">
+            <h3>Instruction Designed for Maximum Engagement</h3>
+            
+            <div class="ratio-graphic">
+                <i class="fa-solid fa-chalkboard-user"></i> 
+                <span style="font-size: 2.5rem; color: #ccc;">→</span>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+            </div>
+            
+            <div class="ratio-text">
+                <p><strong>1 professional poker instructor per 9 guests</strong><br>
+                Example: 15 guests = 2 pros (8/7 split)<br>
+                2-hour minimum for all experiences</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-cream">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 50px;">Optional Enhancements</h2>
+            <div class="grid-4">
+                <div class="enhancement-col">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h4>Instructional</h4>
+                    <ul>
+                        <li>Strategy mini-tournaments</li>
+                        <li>Team competitions</li>
+                        <li>Deep Game Theory modules</li>
+                        <li>Psychology & tells training</li>
+                    </ul>
+                </div>
+                <div class="enhancement-col">
+                    <i class="fa-solid fa-gem"></i>
+                    <h4>Branding</h4>
+                    <ul>
+                        <li>Cahill-branded poker felts</li>
+                        <li>Custom poker chips</li>
+                        <li>Premium branded playing cards</li>
+                        <li>Digital Cahill logo display</li>
+                    </ul>
+                </div>
+                <div class="enhancement-col">
+                    <i class="fa-solid fa-martini-glass-citrus"></i>
+                    <h4>Food & Beverage</h4>
+                    <ul>
+                        <li>Whiskey or spirits tasting</li>
+                        <li>Premium open bar</li>
+                        <li>Full dinner integration</li>
+                        <li>Custom cocktails:</li>
+                        <li class="cocktail-name">The High Yield Highball</li>
+                        <li class="cocktail-name">The Gray Lady</li>
+                        <li class="cocktail-name">The Syndicate</li>
+                        <li class="cocktail-name">Liquid Leverage</li>
+                    </ul>
+                </div>
+                <div class="enhancement-col">
+                    <i class="fa-solid fa-car"></i>
+                    <h4>Concierge</h4>
+                    <ul>
+                        <li>Luxury SUVs, Sprinters</li>
+                        <li>After-event transport</li>
+                        <li>Nightclub access</li>
+                        <li>Show tickets & tours</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="venues" class="section-padding">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px;">The Venetian Poker Room</h2>
+            <div class="gallery-grid">
+                
+                <div class="venue-card">
+                    <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/693b4f0f53781fe90d3419f1.webp" alt="Venetian 1">
+                </div>
+
+                <div class="venue-card">
+                    <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/693b4f0f21e2f3c0e95071a1.webp" alt="Venetian 2">
+                </div>
+
+                <div class="venue-card">
+                    <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/693b4f0f5b7f6413a3defc1e.jpg" alt="Venetian 3">
+                </div>
+                
+                 <div class="venue-card">
+                    <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/693b4f0f517c3a03ae6e671a.webp" alt="Venetian 4">
+                </div>
+
+                 <div class="venue-card">
+                    <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/693b4f0facebf7f15448df05.jpg" alt="Venetian 5">
+                </div>
+
+                 <div class="venue-card">
+                    <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/693b4f0fab48043423a82346.jpg" alt="Venetian 6">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="instructors" class="section-padding bg-cream">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <h2>Sample of Our Instructors | Top-Tier Pros</h2>
+                <p>Interested in a specific poker pro, UFC fighter, or celebrity?<br>We can secure the perfect talent for your group.</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="instructor-card">
+                    <div class="instructor-img">
+                        <img src="https://www.gamblinginsider.com/img/news/kenna-james-ape-in-poker-partnership.jpg" alt="Kenna James">
+                    </div>
+                    <h4>Kenna James</h4>
+                    <span class="years-teaching">20+ years teaching</span>
+                    <div class="stats">
+                        <p>260+ cashes<br>22 wins<br>$4.2M+ earnings</p>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <div class="instructor-img">
+                        <img src="https://www.seminolehardrockpokeropen.com/wp-content/uploads/2022/01/2022-LHPO-Jeff-Madsen.jpg" alt="Jeff Madsen">
+                    </div>
+                    <h4>Jeff Madsen</h4>
+                     <span class="years-teaching">10+ years teaching</span>
+                    <div class="stats">
+                        <p>4 WSOP bracelets<br>WSOP Player of Year<br>$7M+ winnings</p>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <div class="instructor-img">
+                        <img src="https://media.cardplayer.com/assets/000/031/133/BLACK_WINS.jpg" alt="Taylor Black">
+                    </div>
+                    <h4>Taylor Black</h4>
+                     <span class="years-teaching">3+ years teaching</span>
+                    <div class="stats">
+                        <p>WPT Champion<br>$5.3M+ earnings</p>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <div class="instructor-img">
+                        <img src="https://s.pnimg.net/9BAfDHPTszjJnQoJZKBseCj5xEK867L6gzAhY0EdeC0/pr:article-leading-desktop-2x/aHR0cHM6Ly9wbmlt/Zy5uZXQvdy9hcnRp/Y2xlcy8wLzY0OS84/MTNmNDJhOWI4Lmpw/Zw.webp" alt="Nick Pupillo">
+                    </div>
+                    <h4>Nick Pupillo</h4>
+                     <span class="years-teaching">2 years teaching</span>
+                    <div class="stats">
+                        <p>WSOP bracelet<br>Circuit titles<br>$6.3M+ earnings</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instructor-footer-text">
+                Over decades of trial and error we have assembled the greatest poker instructors/Players in the world, hands down!
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-navy">
+        <div class="container">
+            <div class="pricing-panel">
+                <h2>Total Amount = $6,500<br><span style="font-size: 1.5rem; font-weight: 400;">Venue, Pros & printed courseware included</span></h2>
+                
+                <div style="text-align: left; margin-bottom: 25px;">
+                    <p>2 tables reserved in the beautiful Venetian poker room for 2 hours with a transition into "real money" cash game play or a potential tournament. If you would also like "real money" play to be private there will be an additional cost for this that I can get pricing for, just let me know your thoughts. Otherwise we can easily get anyone that wants to play in "real money" cash games onto the poker room wait list for the stakes of their choice, just no guarantees where everyone will be seated with this option.</p>
+                    
+                    <p>This pricing also reflects our 2 pros coming directly to your location at The Venetian and conducting an hour of "body tells and reading your opponents" or also called "From the Poker Table to the board room" and an hour of hand analysis where our pros breakdown what all players are doing right or wrong as our pros simulate real hand scenarios. Basically, imagine Tiger woods analyzing your back swing or Jordan breaking down your jump shot all in real time.</p>
+                </div>
+
+                <hr style="border-color: rgba(255,255,255,0.2); margin: 20px 0;">
+                <div style="text-align: center;">
+                    <p style="font-weight: bold; margin-bottom: 15px; font-size: 1.2rem;">Included:</p>
+                    <p>2 professional poker pros • 2 poker tables</p>
+                    <p>2 hours in the Venetian Poker Room (Venue)</p>
+                    <p>All chips, cards & courseware that everyone gets to keep • 2-hour training session</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container text-center">
+            <h2>Next Steps</h2>
+            <ul class="steps-list" style="text-align: left; margin-bottom: 40px;">
+                <li>Confirm preferred date (Feb. 10 or 11)</li>
+                <li>Approve and secure event</li>
+            </ul>
+            <p class="text-navy" style="font-size: 1.2rem;"><strong>February tends to book very quickly for us each year — securing your date early ensures availability.</strong></p>
+            
+            <hr style="width: 100px; margin: 40px auto; border-color: var(--navy-light);">
+            
+            <div class="cta-buttons">
+                <a href="tel:6167457148" class="btn btn-primary" style="background: var(--navy-light); color: white;">Call Matt To Finalize</a>
+                
+                <a href="mailto:book@pokertraininglasvegas.com?subject=CaHill%20Client%20Experience%20Approval&body=Hi%20Matt%2C%0A%0AWe%E2%80%99d%20like%20to%20move%20forward%20with%20the%20CaHill%20Client%20Experience%20on%20February%2010th%20or%2011th%20(Please%20choose%20a%20date%20and%20optimal%20time%20and%20we'll%20work%20around%20it).%20Please%20send%20over%20the%20invoice%20for%20%246%2C500%20to%20lock%20in%20our%20date!%0A%0A-%20Annie%20%26%20Team" class="btn btn-outline">Approved | Send Invoice</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>Las Vegas Poker Training</h3>
+            <p>
+                Matt Carpenter<br>
+                📞 (725) 307-4477<br>
+                📧 <a href="mailto:book@pokertraininglasvegas.com">book@pokertraininglasvegas.com</a>
+            </p>
+            <p style="margin-top: 20px;">
+                <a href="http://Pokertraininglasvegas.com" target="_blank">Pokertraininglasvegas.com</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
